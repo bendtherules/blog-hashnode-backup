@@ -1,5 +1,7 @@
 ## My experience with Typescript annotations
 
+## My experience with Typescript annotations
+
 # TLDR: 
 
 **Pros** — Great to start off with. Less commitment, more immediate reward.  
@@ -20,10 +22,10 @@ Note — I use the term _annotation_ here to refer to typescript annotations
 
 
 ![Typescript in .ts](https://cdn.hashnode.com/res/hashnode/image/upload/v1584343472690/X0sl6YAof.png)
-** Typescript in .ts **
+**Typescript in .ts**
 
 ![Typescript annotations in .js](https://cdn.hashnode.com/res/hashnode/image/upload/v1584343583728/nRqSC1F92.png)
-** Typescript annotations in .js **
+**Typescript annotations in .js**
 
 Typescript powers intelligence for both Javascript and Typescript within VS Code. Now, Typescript is a superset of JS — meaning that existing js files are valid ts, but that wouldn’t necessarily give us better type information. It is the extra type hints that TS allows you to add — using additional language syntax — is what provides deeper type information.
 This extra language syntax is not part of the Javascript syntax and hence, would typically need moving to a .ts file, some changes in the build pipeline and tooling.
@@ -32,7 +34,7 @@ This brings the question of “Typescript vs Javascript” where you have to cho
 
 
 ![Type hints in vscode while using ts annotations in .js](https://cdn.hashnode.com/res/hashnode/image/upload/v1584344157203/_QPp_ZAna.png)
-** Type hints in vscode while using ts annotations in .js **
+**Type hints in vscode while using ts annotations in .js**
 
 Typescript annotations are additional comments within existing JS files — which would immediately start producing richer type hints in VS Code. It works better with an additional config file. These changes are mostly non-obtrusive — so no .ts files, no build change, no new dependency to add. I see it as a perception problem — a friendly-looking diff which is non-destructive, merely adds a few comments and a config file is more likely to get a buy-in from the team, rather than one which touches a lot of files, introduces a new file extension or changes something as critical as the build system.
 
