@@ -140,11 +140,9 @@ In fact, I find myself learning a few more things about the library in these sit
 
 This applies to Typescript as a whole, not just annotations.
 
-![](https://miro.medium.com/max/56/1*AFraSdlsxpadGIT1S-eV1g.png?q=20)
 
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/3136/1*AFraSdlsxpadGIT1S-eV1g.png" width="1568" height="1666" role="presentation"/></noscript>
-
-Look how complex the type signature for react-redux `connect` is!
+![Look how complex the type signature for react-redux `connect` is!](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378659640/HTnOX3XPO.png)
+**Look how complex the type signature for react-redux `connect` is!**
 
 Say, for example `connect` in react-redux — think of it as a complex function, which accepts a function (mapStateToProps) and a plain object (ownProps of the component) as input. It merges the return object from the function call (which reads implicitly from a global store) with the plain object and returns a new one.
 Now, to define the type of the output, it needs access to type of its ownProps and redux state — through generics. But that’s not all — you can also pass `mapDispatchToProps`, which will add dispatch methods to props and `mergeProps` function, which lets you decide the merge strategy between ownProps and this redux introduced props. This is where your generics can get insanely complicated and wrong — if you don’t understand it in details.
@@ -163,11 +161,8 @@ If these implicit contracts have to be made explicit manually, then it adds a lo
 In vscode, in-built refactorings like “extract to function” adds this extra types automatically. But if you want to refactor something else, say extract a smaller React component out of a bigger component — then you will have to manually add types for props and state for new component and maybe also remove some state from the bigger component. This is not unlike keeping your proptypes updated as your component changes over time.
 This might feel like nitpicking, but the extra overhead often acts as a justification to delay refactoring. Or types are somehow glued together to finish the job.
 
-![](https://miro.medium.com/max/60/1*d-cKLgC55H1oEn14D-3z7w.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/4256/1*d-cKLgC55H1oEn14D-3z7w.png" width="2128" height="1020" role="presentation"/></noscript>
-
-Refactoring types in react components
+![Refactoring types in react components](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378705180/TLgWB9Ewv.png)
+**Refactoring types in react components**
 
 On the other hand, types actually do help in making refactorings more predictable and confident. It is easier to find the linked definitions and usages using types. And after refactoring is completed, it gives some confidence about the end result.
 
