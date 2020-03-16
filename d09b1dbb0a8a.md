@@ -30,7 +30,6 @@ This extra language syntax is not part of the Javascript syntax and hence, would
 
 This brings the question of “Typescript vs Javascript” where you have to choose one or the other. It really hinders experimentation and comes with a lot of baggage — needs long-term thought, commitment from the whole team, developer re-skilling and proper rollback strategy (not as easy as it sounds). All of this points to more senior-level decisions and higher capital investment without adequate immediate payoff.
 
-
 ![Type hints in vscode while using ts annotations in .js](https://cdn.hashnode.com/res/hashnode/image/upload/v1584344157203/_QPp_ZAna.png)
 **Type hints in vscode while using ts annotations in .js**
 
@@ -44,9 +43,8 @@ P.S. Typescript does infer types (without any extra hint) for both JS and TS, bu
 
 As we discussed above, it solves a huge risk-reward problem and makes it very easy to get started with it without any major change. They lack some of the features that moving to a complete .ts file would provide, but it's easier to do so when it’s already adding some value.
 
-
 ![Importing types from a js/ts file (using annotation)](https://cdn.hashnode.com/res/hashnode/image/upload/v1584350676264/6ul_wxzLF.png)
-** Importing types from a js/ts file (using annotation) **
+**Importing types from a js/ts file (using annotation)**
 
 **JS-TS Interoperability** — Annotations are not limited to the scope of a single file. You can import stuff from other JS/TS files and add typing to your own exports using annotations.
 
@@ -61,15 +59,11 @@ In a nutshell, it felt — verbose and repetitive, lagging in features, less saf
 
 # **Verbose and repetitive** —
 
-![](https://miro.medium.com/max/60/1*vCjjJL1_7kg2kNSCGKLG9g.png?q=20)
+![Repeating inline](https://cdn.hashnode.com/res/hashnode/image/upload/v1584377988436/Gjw6dUU_R.png)
+**Repeating inline**
 
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2496/1*vCjjJL1_7kg2kNSCGKLG9g.png" width="1248" height="658" role="presentation"/></noscript>
-
-Repeating inline![](https://miro.medium.com/max/60/1*yUgYfqP084mhEHvBQtCfig.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2968/1*yUgYfqP084mhEHvBQtCfig.png" width="1484" height="766" role="presentation"/></noscript>
-
-Using typedef
+![Using typedef](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378030457/5hGC9-Zjt.png)
+**Using typedef**
 
 Most of the annotation constructs are line comments which describe the typing of symbols defined in the following line. Line comments make it very convenient to just copy paste repeating types. There are block constructs to define it in one place (within the file or in another file), but these are often new constructs added exclusively to annotations and not available in general Typescript — making it a new learning process (even if you know TS).
 
@@ -81,11 +75,8 @@ I usually find it easier to **define all common typings in a actual .TS file** a
 
 Ok, maybe this shouldn’t be a separate point. It’s actually just an extension of the previous “line comment” bashing, but seriously — you don’t know how bad inline imports feel unless you have seen it.
 
-![](https://miro.medium.com/max/60/1*riiApBgDSOoezHIvx5D1eQ.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2428/1*riiApBgDSOoezHIvx5D1eQ.png" width="1214" height="766" role="presentation"/></noscript>
-
-Importing with annotations
+![Importing with annotations](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378131455/xwcwlha7w.png)
+**Importing with annotations**
 
 Think about it, you have to add a new import line for
 - every imported file
@@ -106,50 +97,36 @@ And annotations sound very well-suited for it. After all, if all we need is a wa
 
 But there are multiple useful constructs in .ts which allows us to play with type, often at a expression level. Think of type assertions and generics.
 
-![](https://miro.medium.com/max/60/1*SdqrU14D7XZNROn3VchdaQ.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2460/1*SdqrU14D7XZNROn3VchdaQ.png" width="1230" height="262" role="presentation"/></noscript>
-
-Type assertion example
+![Type assertion example](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378170479/C88ktJo2q.png)
+**Type assertion example**
 
 **Type assertions** allow us to change the type of any smaller expression (including variables or properties) only within the context of that statement. This is not directly possible with annotations as they can only describe the return value of a statement (sort of).
 
 Now this creates an interesting problem in conjunction with type inference. Say you are sure about the type of a expression (ex. a variable used in the statement), but want Typescript to infer the return type of the whole statement.
 
-![](https://miro.medium.com/max/60/1*77p44F_OeTuGnA2ZMrLiRw.png?q=20)
+![Type assertion + inference with .ts](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378282475/V-vr_EkPN.png)
+**Type assertion + inference with .ts**
 
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2732/1*77p44F_OeTuGnA2ZMrLiRw.png" width="1366" height="514" role="presentation"/></noscript>
-
-Type assertion + inference with .ts![](https://miro.medium.com/max/60/1*Mrqn2qrins0pU4Z8sLYBXg.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/1820/1*Mrqn2qrins0pU4Z8sLYBXg.png" width="910" height="442" role="presentation"/></noscript>
-
-Can’t use type assertion in .js
+![Can’t use type assertion in .js](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378316160/tkDHMgN9d.png)
+**Can’t use type assertion in .js**
 
 This is fine in .ts, just assert the type of that variable and rest is inferred correctly. But with annotations, you can only describe the return value of the whole statement — so you have to manually infer the whole return type based on all parts of the statement, not just the asserted variable. In other words, you can only describe the return type of a function call, not the type of arguments.
 This is very error-prone and will easily break when any of the constituents change.
 
-![](https://miro.medium.com/max/60/1*IzIG1BjOHTSKXHEEwymwYg.png?q=20)
 
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/1452/1*IzIG1BjOHTSKXHEEwymwYg.png" width="726" height="370" role="presentation"/></noscript>
+![Explicit generics example](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378370386/j8oihCbwn.png)
+**Explicit generics example**
 
-Explicit generics example![](https://miro.medium.com/max/60/1*hL06nnIXbGZo27cKYG8yrw.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/1348/1*hL06nnIXbGZo27cKYG8yrw.png" width="674" height="442" role="presentation"/></noscript>
-
-Implicit generics in action
+![Implicit generics in action](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378406592/gVaPCoCN2.png)
+**Implicit generics in action**
 
 **Generics,** on the other hand, is a way to pass types as input to a function call. They are usually passed explicitly, but can be understood implicitly by TS in some cases. Based on this input types, the function usually decided about some characteristics of the output. Ex — In the queue example, all getters and setters on the returned object (i.e. push/pop on `queue`) will only allow number types.
 
-![](https://miro.medium.com/max/60/1*I1rVxCtzCIPi2w207uG5uw.png?q=20)
+![Generics works well with ts](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378446516/qvz0VrgX-.png)
+**Generics works well with ts**
 
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/2228/1*I1rVxCtzCIPi2w207uG5uw.png" width="1114" height="550" role="presentation"/></noscript>
-
-Generics works well with ts![](https://miro.medium.com/max/60/1*kEtNTAWA-XruAOZOgF8zxQ.png?q=20)
-
-<noscript><img class="s t u ho ai" src="https://miro.medium.com/max/1588/1*kEtNTAWA-XruAOZOgF8zxQ.png" width="794" height="514" role="presentation"/></noscript>
-
-But troublesome with js
+![But troublesome with js](https://cdn.hashnode.com/res/hashnode/image/upload/v1584378477243/nUNrzfYmb.png)
+**But troublesome with js**
 
 So, we face the same problem here where we want to pass in some extra types as input to a function call and expect the output type to be decided by the function itself. Annotations don’t really allow us to pass in types inline — we have to manually figure out what the function is supposed to return (given the input) and set that type on the output value.
 In the above example, notice how we are setting type as `Promise<number[]>` in js instead of just `number[]`, like we can with ts. This has same downsides as the type assertion problem.
