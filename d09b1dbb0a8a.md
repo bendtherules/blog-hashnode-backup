@@ -1,7 +1,5 @@
 ## My experience with Typescript annotations
 
-## My experience with Typescript annotations
-
 # TLDR: 
 
 **Pros** — Great to start off with. Less commitment, more immediate reward.  
