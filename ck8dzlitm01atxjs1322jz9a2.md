@@ -46,7 +46,7 @@ Effectively -
 
 One example of this is rewriting `foo.bar()` using a intermediate variable - ` fn = foo.​bar;  fn()`.
 
-Now, if `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
+So, if `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
 
 🧠 This is exactly the reason why passing methods as callback changes the value of `this` (passed within it). Instead of calling a method directly, callback is passed as a function and called later by some other code.
 
