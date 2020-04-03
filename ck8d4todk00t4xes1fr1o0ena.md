@@ -46,9 +46,9 @@ Effectively -
 
 One example of this is rewriting `foo.bar()` using a intermediate variable - ` fn = foo.​bar;  fn()`.
 
-If `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
+So, if `bar` was referencing other values from foo using `this`, those values will become undefined or resolve to a wrong variable.
 
-🧠 This is exactly the reason why passing methods as callback changes the value of `this` (passed within it). Instead of calling a method directly, callback is passed as a function and called later by some other code.
+🧠 This is exactly the reason why passing methods as callback changes the value of `this` (passed within it). Instead of calling a method directly, callback is actually passed as a function and this function is later called by some other code.
 
 ## In other words,
 
@@ -71,29 +71,35 @@ TLDR - If you would like to see me actually go through the spec, this video migh
 
 ![IsPropertyReference- reference where base is object or primitive](https://cdn.hashnode.com/res/hashnode/image/upload/v1584625822167/ZmBSyVj95.png)
 
-Link - 1. https://tc39.es/ecma262/#sec-evaluatecall, 2. https://tc39.es/ecma262/#sec-ispropertyreference
-
 ### PropertyReference
 
 This `foo.bar` structure is defined in the spec as a [PropertyReference](https://tc39.es/ecma262/#sec-ispropertyreference).  
-Think of PropertyReference as anything that is valid as the left side of an assignment expression, if you were assigning to the property of a object or primitive.  
+If you were assigning a value to the property of a object or primitive, anything that is valid as the Left Hand side of the assignment expression is a PropertyReference.
 
-PropertyReference = Reference + base is object or primitive
+So, PropertyReference = Reference + base is object or primitive
 
 ![PropertyReference illustration](https://cdn.hashnode.com/res/hashnode/image/upload/v1585431425436/5XBWmcI5y.png)
 
-Some examples of valid and invalid PropertyReference 👇
+Some examples of valid and invalid PropertyReference might make it more clear - 👇
 
 %[https://gist.github.com/bendtherules/3467664a9c567617342b73c3681c1dc7]
 
 ### Steps
 1. If it is a PropertyReference, then set `thisValue` to base of the PropertyReference (i.e. `foo` in `foo.bar`).  
-2. Or else, take thisValue from surrounding Environment Record.
+2. Or else, thisValue is `undefined`.
 
-The obtained `thisValue` is forwarded to the abstract operation [Call](https://tc39.es/ecma262/#sec-call), which in turn verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
-This [[call]] interface is very similar to the `function.call` public interface and can be approximated with that. One small diff. we noted earlier is that [[call]] changes `this` value from undefined to global object in non-strict mode.
+The obtained `thisValue` is forwarded to the abstract operation Call. Call operation verifies that the resolved value of `foo.bar` is a function and then calls the internal method [function.[[Call]]](https://tc39.es/ecma262/#sec-built-in-function-objects-call-thisargument-argumentslist) with the same thisValue.  
+This function.[[call]] internal method is very similar to the public method `function.call`, which we use to call a function with a custom thisValue.
 
-Note - `foo.bar` is resolved as a string or symbol "bar" within the object `foo` - and goes through the [usual resolution process](https://tc39.es/ecma262/#sec-getvalue) honoring getters, proxies and prototype chains.
+The implementation of this function.[[call]] method is different for different type of callables.  
+Rough speaking, there are 4 type of callables (or simply, functions) -
+
+1. Function declaration and expression
+2. Arrow function
+3. Bound function
+4. Proxy, which supports [[call]]
+
+Till now, we have talked about plain functions (type 1), which are defined using the function keyword. Now, let's look at arrow function and bound function. We'll skip proxies for this discussion.
 
 ## Bound function and Arrow function -
 The function `foo.bar` doesn't need to be a  [simple function object](https://tc39.es/ecma262/#sec-ecmascript-function-objects), but it can be anything with a [[call]] interface like a exotic [bound function](https://tc39.es/ecma262/#sec-bound-function-exotic-objects-call-thisargument-argumentslist) or a proxy.  
@@ -101,6 +107,7 @@ The function `foo.bar` doesn't need to be a  [simple function object](https://tc
 **Bound functions** ignore the `thisValue` that was passed in and instead uses internal [[BoundThis]] as the actual `this`. [[BoundThis]] is the custom thisValue that was passed while binding using `Function.bind`.  
 That is why one solution to this callback problem is to bind a function to the object before passing it as a callback.
 
+*Note* - Bound functions are called as exotic objects, because they don't follow the normal conventions of a object.
 
 **Arrow function** is a type of function object whose `this` value is resolved from the lexical scope.  
 Its [[call]] method ignores the received thisValue (from Call abstract method) and always resolves `this` from its lexical scope, like any other free variable in a closure.
@@ -108,9 +115,9 @@ Its [[call]] method ignores the received thisValue (from Call abstract method) a
 ![thisMode in function objects](https://cdn.hashnode.com/res/hashnode/image/upload/v1585433951432/jnD8M_NB3.png)
 **👇 thisMode in function objects**
 
-It is a function object with internal [[ThisMode]] slot set to lexical.
+Arrow function is a ordinary function object with internal [[ThisMode]] value set to `lexical`.
 
-This can be another solution to the callback problem - creating a arrow function inside a object constructor, will ensure that `this` always resolves to the object.
+This can be another solution to the callback problem - creating a arrow function inside the object constructor will ensure that `this` always resolves to the base object.
 
 ----
 
