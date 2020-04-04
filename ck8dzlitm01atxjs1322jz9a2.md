@@ -74,7 +74,7 @@ TLDR - If you would like to see me actually go through the spec, this video migh
 ### PropertyReference
 
 This `foo.bar` structure is defined in the spec as a [PropertyReference](https://tc39.es/ecma262/#sec-ispropertyreference).  
-If you were assigning a value to the property of a object or primitive, anything that is valid as the Left Hand side of the assignment expression is a PropertyReference.
+If you were assigning a value to the property of a object or primitive, then anything that is valid as the Left Hand side of the assignment expression is a PropertyReference.
 
 So, PropertyReference = Reference + base is object or primitive
 
