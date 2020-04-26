@@ -14,8 +14,8 @@ A recruiting agency (Interviewbit) contacted me for UI Engineer 1 opening in Fli
 ## 📅 About the day
 The interview was mostly a one-day process - from morning to late evening. I actually liked how the whole process got over in the same day. First, they asked us to gather in a meeting room and explained the machine coding task (1st round). Next rounds were ps/ds (problem solving + data structure), UI + Javascript round and finally, manager round. There is probably one more system design round for UI 2 and above.
 
-There was quite a few hours of gap in between every round. It wasn't clear at all when your name is going to come up or which round is going on currently. Some people legit started watching movies in between 🍿.  
-Lunch and snacks were arranged for all interviewees. You can go the cafeteria (not free) if you want to.
+There was a lot of waiting in between every round. It wasn't clear when your name is going to come up, or which round is going on currently. Some people legit started watching movies 🍿 in between.  
+Lunch and snack was arranged by HR. You can go the cafeteria (not free) if you want to.
 
 ## 🛠 Machine coding (MC) 
 
