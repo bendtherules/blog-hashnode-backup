@@ -3,7 +3,7 @@
 
 🎙️ Hi, I am Abhas. I interviewed at Flipkart for UI engineer 1 role at the start of 2019.  
 
-It's already been one year from then, but I never publicly wrote about it. Over time, some people have asked me about the UI interview process at Flipkart. I have probably said that I will write back in some time, but never back. Really sorry for that! I finally got around to writing today.
+It's already been one year from then, but I never publicly wrote about it. Over time, some people have asked me about the UI interview process at Flipkart. I have probably said that I will write back in some time, but never back. Really sorry for that! I have finally got around to writing today.
 
 **This is my effort to document the general process, while abstracting away the actual questions.**
 
@@ -51,7 +51,7 @@ Most of these are standard questions. Some questions were asked indirectly throu
 
 If you have reached till this round, that's good news. HR will only present 2-3 potential candidates to the manager to save his/her time.  
 The manager can technically ask anything they need to make a final decision. Expect some -  
-a. HR questions (why do you want to move, what are you looking for in new role), and 
+a. HR questions (why do you want to move, what are you looking for in new role), and  
 b. some tech questions (authentication, cookies in details, localstorage, new react features, some repeat questions from prev round, etc).  
 
 Don't read too much into the HR questions - they are pretty standard and nothing personal about you. 
