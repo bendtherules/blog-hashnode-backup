@@ -67,3 +67,6 @@ Don't read too much into the HR questions - they are pretty standard and nothing
 
 The exact interview process and experience depends on the team you're applying for. Due to the current situation, some of these rounds might have changed slightly (like less interaction with interviewers, more hackerrank-ish rounds, etc.).  
 The general structure and advice should still hold true.
+
+### If you liked this post, subscribe to my Javascript newsletter - https://buttondown.email/bendtherules.  
+### I occasionally post on Youtube at https://studio.youtube.com/channel/UC3LLuQ-6j1OQpKKTKwHT_MA. And my personal website is https://bendtherul.es
