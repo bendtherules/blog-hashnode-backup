@@ -23,7 +23,7 @@ This is a UI you have to build using **plain html/css/js** - no ui library like 
  
 Complete atleast some of the reqd. features. But focus more on clean coding, best practices and logic, rather than on the ui look. You'll have 1-2 hour to complete this task. But don't worry - it's not supposed to be complete-able in that timeframe. I was able to finish only half of the required features and still got through. So, prioritize the imp tasks and explain how you'll do the rest during review.
 
-The solution is reviewed in a few hours by a interviewer. There is some point for each small feature and edge cases (objective), but also points for clean coding, separation of concerns (multiple components or files) and good architecture (believe me, you'll end up with some sort of render+update approach).
+The solution is reviewed in a few hours by a interviewer. There is some point for each small feature and edge case (objective), and also some point for - clean coding, separation of concerns (multiple components or files) and good architecture (believe me, you'll end up with some sort of render+update approach).
 
 🌟 Think beforehand how you want to build using plain js, keeping it modular and everything. Have a scaffolding with import/export support ready (webpack).
 
