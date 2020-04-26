@@ -1,7 +1,7 @@
 ## Flipkart UI Engineer 1 interview - My experience
 
 
-🎙️ Hi, I am Abhas. I interviewed at Flipkart for UI engineer 1 role at the start of 2019.  
+🎙️ Hi, I am Abhas. I interviewed at Flipkart for UI engineer 1 role in the start of 2019.  
 
 It's already been one year from then, but I never publicly wrote about it. Over time, some people have asked me about the UI interview process at Flipkart. I have probably said that I will write back in some time, but never back. Really sorry for that! I have finally got around to writing today.
 
