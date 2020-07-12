@@ -19,7 +19,7 @@ This is how the iterable/iterator stuff works.
 
 In our case, Iterable is `someArray` - which has a special property `Symbol.iterator` whose value is a method. Calling this method returns a iterable (`iter`), which has `.next()` method. Calling this method returns all the values one-by-one.
 
-## ArrayIterator
+## Array Iterator
 
 Array has in-built support for iterable/iterator protocol, through prototype. Array.prototype has a method with key `Symbol.iterator`, which creates a ArrayIterator. 
 
