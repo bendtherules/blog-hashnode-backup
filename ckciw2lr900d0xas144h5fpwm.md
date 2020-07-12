@@ -64,19 +64,19 @@ Now that we have the in-built array iterator, the most important thing is knowin
 	(for arr.entries(), return array of [key, value])  
 	
 	f. Set [[ArrayLikeNextIndex]] = index + 1  
-	(⭐️1️⃣  Always increment key to next index. This sequential index is used to get the next value, irrespective of holes in that position (whether that index exists or not). It doesn't skip the empty/non-existent indexes.)
+	(⭐️ 1️⃣  Always increment key to next index. This sequential index is used to get the next value, irrespective of holes in that position (whether that index exists or not). It doesn't skip the empty/non-existent indexes.)
 
 2. Else, (i.e. when `index >= arr.length` - reached end of array)
 
-	a. Set `[[IteratedArrayLike]]` = `undefined`.
-	(⭐️2️⃣  Yes, once it reaches the end - it sets linked array to undefined. This is to ensure the once the iterator has finished, it will never return any more value. This undefined array is handled in step 0.  
+	a. Set `[[IteratedArrayLike]]` = `undefined`.  
+	(⭐️ 2️⃣  Yes, once it reaches the end - it sets linked array to undefined. This is to ensure the once the iterator has finished, it will never return any more value. This undefined array is handled in step 0.  
 	If this was not done and if array length was increased before next call, then it would again return new values after saying `done:true` earlier.)
 
 	b. Return `{value: undefined, done: false}`
 
 ## 🤯 Implications
 
-1. `[...arr]` converts sparse array to dense array. [⭐️1️⃣ above](#note-1)
+1. `[...arr]` converts sparse array to dense array. (Reason -⭐️ 1️⃣ above)
 
 ```js
 foo = [10, , 30, 40]; // [10, <hole>, 30, 40]
@@ -93,7 +93,7 @@ Object.keys(foo) // 0, 2, 3
 foo.keys(); // 0, 1, 2, 3
 ```
 
-2. Array iterator will never return more values after it has finished once - even if the array has more values now. [⭐️2️⃣ above](#note-2)
+2. Array iterator will never return more values after it has finished once - even if the array has more values now. (Reason - ⭐️ 2️⃣ above)
 
 ```js
 arr = [10]
