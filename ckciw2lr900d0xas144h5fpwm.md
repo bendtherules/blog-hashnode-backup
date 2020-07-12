@@ -76,7 +76,7 @@ Now that we have the in-built array iterator, the most important thing is knowin
 
 ## 🤯 Implications
 
-1. `[...arr]` converts sparse array to dense array. (Reason -⭐️ 1️⃣ above)
+A. `[...arr]` converts sparse array to dense array. (Reason -⭐️ 1️⃣ above)
 
 ```js
 foo = [10, , 30, 40]; // [10, <hole>, 30, 40]
@@ -93,7 +93,7 @@ Object.keys(foo) // 0, 2, 3
 foo.keys(); // 0, 1, 2, 3
 ```
 
-2. Array iterator will never return more values after it has finished once - even if the array has more values now. (Reason - ⭐️ 2️⃣ above)
+B. Array iterator will never return more values after it has finished once - even if the array has more values now. (Reason - ⭐️ 2️⃣ above)
 
 ```js
 arr = [10]
