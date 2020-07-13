@@ -69,7 +69,7 @@ Now that we have the in-built array iterator, the most important thing is knowin
 3. Else, (i.e. when `index >= arr.length` - reached end of array)
 
 	a. Set `[[IteratedArrayLike]]` = `undefined`.  
-	(⭐️ 2️⃣  Yes, once it reaches the end - it sets linked array to undefined. This is to ensure the once the iterator has finished, it will never return any more value. This undefined array is handled in step 1.  
+	(⭐️ 2️⃣  Yes, once it reaches the end - it sets linked array to undefined. This is to ensure that once the iterator has finished, it will never return any more value. This undefined array is handled in step 1.  
 	If this was not done and if array length was increased before next call, then it would again return new values after saying `done:true` earlier.)
 
 	b. Return `{value: undefined, done: false}`
