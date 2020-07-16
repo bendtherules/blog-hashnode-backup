@@ -1,6 +1,6 @@
 ## How does in-built Array iterator work?
 
-We use `[...someArray]` or `array.values()` to get multiple values out of a array.  And we kind of know how it works - it just returns us all the values from the array.  Internally, both of them uses the iterator protocol - which is already defined on array prototype.
+We use `[...someArray]` or `array.values()` to get multiple values out of a array.  And we kind of know how it works - it just returns all the values from the array. Now internally, both of them uses the iterator protocol - which is already defined on array prototype.
 
 But do we know exactly how the in-built Array iterator works? Can you write a precise polyfill to implement iterator protocol on Array?
 
