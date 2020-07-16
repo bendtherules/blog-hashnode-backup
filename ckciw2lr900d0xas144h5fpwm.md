@@ -13,7 +13,7 @@ When we use spread operator, like `[...someArray]` - it treats someArray as a ge
 2. Then it consumes all the values from the iterable by calling `iter.next()` repeatedly.  
     This method `.next()` returns response in this structure `{value: "something", done: true|false}`.
     
-3. While values are available, it returns `done: true`; after all values are finished, it returns `done: false`. After this, the consumer (i.e. spread operator) should stop asking for more values.
+3. While values are available, it returns `done: false`; after all values are finished, it returns `done: true`. After this, the consumer (i.e. spread operator) should stop asking for more values.
 
 This is how the iterable/iterator stuff works.  
 
