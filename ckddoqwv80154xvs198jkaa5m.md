@@ -176,7 +176,8 @@ It will finally reach global scope, which always provides a `this` value (global
 ### What does this explain?
 
 
-1. Arrow functions don't have their own `this` value. It is taken from the closest `this`-providing scope.
+A. Arrow functions don't have their own `this` value. It is taken from the closest `this`-providing scope.
+
 ```js
 function outer() {
   const inner = () => {
@@ -192,7 +193,8 @@ outer.call(obj);
 ```
 Same logic also applies for nested arrow functions.
 
-2. Block scopes also don't have their own `this` value.
+B. Block scopes also don't have their own `this` value.
+
 ```js
 {
   // just prints global object
@@ -200,7 +202,8 @@ Same logic also applies for nested arrow functions.
 }
 ```
 
-3. In modules, top-level `this` is `undefined`.
+C. In modules, top-level `this` is `undefined`.
+
 ```js
 // Save as file.mjs and run in node.
 // That will run it as a module.
