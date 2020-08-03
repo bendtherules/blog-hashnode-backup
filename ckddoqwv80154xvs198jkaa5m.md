@@ -217,4 +217,4 @@ console.log(this); // prints `undefined`
 ```
 
 -----------
-That's all. I [post on LinkedIn](https://www.linkedin.com/in/bendtherules) regularly about more javascript stuff.
+That's all. Thanks for reading. I [post on LinkedIn](https://www.linkedin.com/in/bendtherules) regularly about more javascript stuff.
