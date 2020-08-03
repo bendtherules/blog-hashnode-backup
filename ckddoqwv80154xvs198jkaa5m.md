@@ -146,7 +146,7 @@ Before going further, lets take a small detour.
 
 Remember the function scope (`FunctionEnvironment`) and `F.[[ThisMode]]`? Well, this FunctionEnvironment also has 2 internal properties - `env.[[ThisBindingStatus]]` and `env.[[ThisValue]]`. Their values are set based on `F.[[ThisMode]]`.  
 
-If `[[ThisMode]]` is lexical, set `[[ThisBindingStatus]]` to 'lexical' and no need of setting `[[ThisValue]]`.
+If `[[ThisMode]]` is lexical, set `[[ThisBindingStatus]]` to 'lexical' and no need of setting `[[ThisValue]]`.  
 If `[[ThisMode]]` is non-lexical, set `[[ThisBindingStatus]]` to 'initialized' and set `[[ThisValue]]` to the actual `this` that the function was called with.
 
 In summary, the function scope has 2 properties which say - whether the scope has a `this` value or not and if it has, then what is the value. Arrow functions will not have any `this` value, but normal functions will.
