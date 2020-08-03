@@ -176,6 +176,8 @@ b. else, move up to parent scope and repeat.
 
 It will finally reach global scope, which always provides a `this` value (global object). For modules, it will stop at the module scope - whose `this` value is `undefined`.
 
+In short, it means that the value of `this` will be resolved from the closest `this`-providing scope. (Follow the table above.) 
+
 ### What does this explain?
 
 
