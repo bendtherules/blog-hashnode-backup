@@ -160,6 +160,7 @@ These two methods are implemented on all types of environments (scope). Here is 
 
 | Environment Type | HasThisBinding() | GetThisBinding() |
 |--------|--------|---------------|
+| function | true/false   | [[ThisValue]] |
 | block scope | false   | -       |
 | module | true   | undefined     |
 | global | true   | global object |
@@ -169,8 +170,8 @@ These two methods are implemented on all types of environments (scope). Here is 
 
 Now, back to the special resolving logic for `this`. It will do -
 
-Starting from the FunctionEnvironment (i.e. current function scope), 
-a. if `env.HasThisBinding()`, then return   `env.GetThisBinding()`
+Starting from the FunctionEnvironment (i.e. current function scope),  
+a. if `env.HasThisBinding()`, then return   `env.GetThisBinding()`  
 b. else, move up to parent scope and repeat.
 
 It will finally reach global scope, which always provides a `this` value (global object). For modules, it will stop at the module scope - whose `this` value is `undefined`.
