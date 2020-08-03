@@ -113,9 +113,9 @@ a. it will check in the current LexicalEnvironment (i.e. the new local scope) fi
 b. if it doesn't find the variable there, it will check in it's parent scope (parent of LE = F.[[Environment]] = lexical/closure scope),  
 c. and so on.
 
-This lookup will finally end when it reaches the global scope (doesn't have parent scope). If the variable is still not found, it will throw a `ReferenceError`.
+This lookup will finally end when it reaches the global scope (which doesn't have any parent scope). If the variable is still not found, it will throw a `ReferenceError`.
 
-If you remember the scope chain of `inner` func, this means that the variable will never be looked up in caller scope (scopeC).  
+If you remember the scope chain of `inner` func, this means that the variable will be looked up in lexical/creation scope (scopeA) and NEVER in caller scope (scopeC).  This behavior is called as closure or lexical scoping.  
 Even if there is no definition for `myText` in the lexical scope (scopeA), it will NOT use the value from scopeC - and indeed throw a error. Example ⤵️
 
 ```js
@@ -135,6 +135,8 @@ function outer() {
   fn();
 }
 ```
+
+(Actual implementations of closure in different engines will optimize the closure by only storing variables that are actually being used (if any). But the Ecmascript specification doesn't talk about those optimizations and tells you to directly store the whole scope, for all functions.) 
 
 ## `this` lookup
 
