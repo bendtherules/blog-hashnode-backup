@@ -136,7 +136,7 @@ function outer() {
 }
 ```
 
-(Actual implementations of closure in different engines will optimize the closure by only storing variables that are actually being used (if any). But the Ecmascript specification doesn't talk about those optimizations and tells you to directly store the whole scope, for all functions.) 
+(Actual implementation of closure in different engines will optimize the closure by only storing variables that are actually being used (if any). But the Ecmascript specification doesn't talk about those optimizations and tells you to directly store the whole lexical scope, for all functions.) 
 
 ## `this` lookup
 
