@@ -140,7 +140,7 @@ function outer() {
 
 ## `this` lookup
 
-Earlier, we looked at how normal variables get resolved in a function. But whenever you write `this.someThing`, the value of `this` does NOT get resolved in the same way. It is called as a `ThisExpression`, which gets resolved specially.
+Earlier, we looked at how normal variables get resolved in a function. But whenever you write `this.someThing`, the value of `this` does NOT get resolved in the same way. It is known as a `ThisExpression`, which gets resolved specially.
 
 Before going further, lets take a small detour.  
 
