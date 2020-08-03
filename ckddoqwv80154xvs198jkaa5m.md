@@ -56,7 +56,7 @@ function outer() {
   fn();
 }
 ```
-Above, function inner will get *created* when outer() is called, and creation scope is `scope A`. But it is *called* later in `scope C`.
+Here, function `inner` will get *created* when `outer` is called, and the creation scope is `scope A`. But it is *called* later in `scope C`.
 
 
 ## When function is created
