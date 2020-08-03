@@ -23,11 +23,13 @@ function outer() {
 Here we have a outer function, which returns a inner function, and this inner function is called later inside another block scope. The scope for each of them is labelled from A to C, and there is also a outermost global scope. 
 
 
-**What is the output above? How is the variable `myText` resolved within the function?**
+**What is the output above? How is the variable `myText` resolved within the function?**  
 
 In the same note, **how is `this` resolved within the function body?**
 
 ## Creating and calling function is different
+
+Let's understand in depth, from the start. 
 
 A function has 2 distinct phases - function creation and function call.   
 Function is created when you define it (with hoisting) in the lexical scope or creation scope. Now, this function can be stored in some variable and called much later - from the caller scope. These creation and caller scopes might be different.
