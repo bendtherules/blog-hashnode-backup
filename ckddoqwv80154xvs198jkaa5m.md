@@ -25,7 +25,7 @@ Here we have a outer function, which returns a inner function, and this inner fu
 
 **What is the output above? How is the variable `myText` resolved within the function?**
 
-In the same note, we'll also look at **how is `this` resolved within the function body?**
+In the same note, **how is `this` resolved within the function body?**
 
 ## Creating and calling function is different
 
