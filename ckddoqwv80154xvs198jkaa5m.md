@@ -106,11 +106,11 @@ function outer() {
 
 ### Variable lookup
 
-Now, when we use something like `console.log(myText)` in the function body - it needs to resolve the value of the variable `myText`.
+Now, when we use something like `console.log(myText)` in the function body - it needs to resolve or lookup the variable `myText`.
 
-For variable lookup, 
-a. it will check in the current LexicalEnvironment (i.e. the new local scope) first, and  
-b. if it doesn't find the variable there, it will check in it's parent scope (parent of LE = F.[[Environment]] = lexical/closure scope),
+For variable lookup,  
+a. it will check in the current LexicalEnvironment (i.e. the new local scope) first, and. 
+b. if it doesn't find the variable there, it will check in it's parent scope (parent of LE = F.[[Environment]] = lexical/closure scope),  
 c. and so on.
 
 This lookup will finally end when it reaches the global scope (doesn't have parent scope). If the variable is still not found, it will throw a `ReferenceError`.
