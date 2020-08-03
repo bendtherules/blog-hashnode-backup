@@ -76,9 +76,9 @@ In this article, we'll only look at how `this` is resolved - not the actual valu
 When a function is called, it creates a new execution context. Execution context has a property called LexicalEnvironment (LE). This LE points to the current scope which should be used for lookup. We know that a function has its own new scope. So, a new FunctionEnvironment (function scope) is created and set to LE.  
 ✅ So, till now - when a function is called, it gets a new execution context, whose LE points to a new function scope. This new scope will contain function's own local variables.
 
-✅ Now, scopes are chained - so, this new function scope (LE) needs to decide what is its parent scope (outerEnv). It has 2 options -  
+✅ Now, scopes are chained - so, this new function scope (LE) needs to decide what is it's parent scope (outerEnv). It has 2 options -  
 1. caller scope (which was the current scope before this new one was created) or,
-2. its lexical scope (which it is carrying around in F.[[Environment]] ).
+2. it's lexical scope (which it is carrying around in F.[[Environment]] ).
 
 It decides to **set the lexical scope as parent**, ignoring the caller scope. 
 
@@ -109,7 +109,7 @@ function outer() {
 Now, when we use something like `console.log(myText)` in the function body - it needs to resolve or lookup the variable `myText`.
 
 For variable lookup,  
-a. it will check in the current LexicalEnvironment (i.e. the new local scope) first, and. 
+a. it will check in the current LexicalEnvironment (i.e. the new local scope) first, and  
 b. if it doesn't find the variable there, it will check in it's parent scope (parent of LE = F.[[Environment]] = lexical/closure scope),  
 c. and so on.
 
