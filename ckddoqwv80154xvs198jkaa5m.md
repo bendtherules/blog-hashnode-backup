@@ -32,7 +32,7 @@ In the same note, **how is `this` resolved within the function body?**
 A function has 2 distinct phases - function creation and function call.   
 Function is created when you define it (with hoisting) in the lexical scope or creation scope. Now, this function can be stored in some variable and called much later - from the caller scope. These creation and caller scopes might be different.
 
-All these sounds obvious, but it's easy to forget the difference. So, let's actually see the 2 phases for our `inner` function -
+All of these sound obvious, but it's easy to forget the difference. So, let's actually see the 2 phases for our `inner` function -
 
 ```js
 function outer() {
