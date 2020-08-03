@@ -1,4 +1,4 @@
-## Closure and this - How are variables resolved within functions?
+## Closure and this - How are variables resolved within a function?
 
 Let's start with a example of closure -
 
