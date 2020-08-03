@@ -30,7 +30,7 @@ In the same note, **how is `this` resolved within the function body?**
 ## Creating and calling function is different
 
 A function has 2 distinct phases - function creation and function call.   
-Function is created when you define it (with hoisting) and that scope where it is created can be called as lexical scope or creation scope. Now, this function can be stored in some variable and called much later - where it is called from can be called as caller scope. These creation and caller scopes might be different.
+Function is created when you define it (with hoisting) in the lexical scope or creation scope. Now, this function can be stored in some variable and called much later - from the caller scope. These creation and caller scopes might be different.
 
 All these sounds obvious, but it's easy to forget the difference. So, let's actually see the 2 phases for our `inner` function -
 
