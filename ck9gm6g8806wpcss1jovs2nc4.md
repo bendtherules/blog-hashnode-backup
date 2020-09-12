@@ -8,7 +8,7 @@ It's already been one year from then, but I never publicly wrote about it. Over 
 **This is my effort to document the general process, while abstracting away the actual questions.**
 
 ## 📞 The call
-A recruiting agency (Interviewbit) contacted me for UI Engineer 1 opening in Flipkart and setup the onsite. There was no screening round, it was directly onsite. About 10-12 candidates were invited for the same role, on a weekend.  
+A recruiting agency (Interviewbit) contacted me for UI Engineer 1 opening in Flipkart and setup the onsite. (I should clarify something here - I am not recommending that you use their platform or pay for their courses; I merely had a profile on their website, wasn't active in solving their questions, neither did i join their courses. Their main business is referring candidates and they get paid for successful candidates by Flipkart.) There was no screening round, it was directly onsite. About 10-12 candidates were invited for the same role, on a weekend.  
 (Flipkart loves this group interview format, where agencies shortlist a few candidates and send them for interview. Going through agencies is your best shot at getting to the door. It's sad, but referral is almost useless here and gets ignored most of the time.) 
 
 ## 📅 About the day
